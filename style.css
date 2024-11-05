@@ -1,0 +1,344 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: lavender;
+}
+
+header {
+    color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.first-paragraph{
+    text-align: center;
+    color: rgb(104, 103, 103);
+    padding: 10px;
+}
+
+.second-paragraph{
+    text-align: center;
+    color: rgb(104, 103, 103);
+    font-size: 12px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button {
+    background-color: rgb(143, 124, 252);
+    color: white;
+    text-decoration: none;
+    padding: 6px;
+    border-radius: 2px;
+    margin: 16px;
+    font-size: 14px;
+}
+
+.button:hover {
+    background-color: rgb(163, 148, 251);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: white;
+    padding: 60px;
+    margin: 60px auto;
+    width: 350px;
+}
+
+input[type=text], input[type=password] {
+    width: 350px;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.tooltip {
+    display: none; 
+    background-color: #7878782b;
+    color: rgb(87, 87, 87);
+    border-radius: 5px;
+    padding: 2px;
+    position: relative;
+    font-size: 12px;
+}
+
+input:focus + .tooltip {
+    display: block; 
+}
+
+.cancelbtn {
+    position: relative;
+    bottom: -40px;
+    right: 25px;
+    color: rgb(143, 124, 252);
+    text-decoration: none;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.submitbtn {
+    position: relative;
+    bottom: -40px;
+    left: 25px;
+    background-color: rgb(143, 124, 252);
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 12px;
+    border: none;
+    border-radius: 2px;
+}
+
+.loginbtn {
+    position: relative;
+    bottom: -40px;
+    left: 250px;
+    background-color: rgb(143, 124, 252);
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 12px;
+    border: none;
+    border-radius: 2px;
+}
+
+.home-container {
+    position: relative;
+    text-align: center;
+    width: auto;
+}
+
+.tutorial {
+    padding: 10px;
+    font-weight: bold;
+    color: rgb(59, 59, 59);
+}
+
+.habit-list {
+    background-color: rgba(200, 200, 249, 0.47);
+    width: 500px;
+    height: 350px;
+    margin: 30px auto;
+    padding: 4px;
+}
+
+#habitsList {
+    text-align: start;
+}
+
+.plusBtn {
+    border-radius: 50px;
+    border: 1px solid black;
+    position: relative;
+    bottom: 380px;
+    left: 230px;
+    background-color: white;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(255, 255, 255, 0.459);
+    overflow: hidden;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start; 
+}
+
+.nav-links li {
+    margin-right: 20px; 
+}
+
+.nav-links a {
+    color: black; 
+    text-decoration: none; 
+    font-size: 16px;
+    display: flex;
+    align-items: center; 
+}
+
+.nav-links a i {
+    margin-right: 8px; 
+}
+
+.modal {
+    display: block;
+    display: flex; 
+    position: fixed; 
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+.modal-content {
+    background-color: white; 
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+
+.modal-content button {
+    padding: 8px 16px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#helpPopup {
+    display: none; 
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: black;
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; 
+}
+
+#startBtn {
+    background-color: rgb(143, 124, 252); 
+    color: white;
+}
+
+#skipBtn {
+    background-color: transparent; 
+    color: rgb(143, 124, 252);
+}
+
+#closeBtn {
+    background-color: rgb(143, 124, 252); 
+    color: white;
+    border: none;
+    border-radius: 2px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#tutorialSection {
+    display: none; 
+    background-color: rgba(0, 0, 0, 0.8); 
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; 
+}
+
+.modal {
+    display: none;
+}
+
+.create-habit-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: white;
+    padding: 60px;
+    margin: 50px auto;
+    width: 350px;
+}
+
+.create-habit-container label {
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+    display: block;
+}
+
+.create-habit-container input[type="text"],
+.create-habit-container input[type="date"],
+.create-habit-container select,
+.create-habit-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.create-habit-container textarea {
+    resize: vertical; 
+}
+
+#backBtn {
+    position: relative;
+    right: 50px;
+    top: 50px;
+}
+
+#undoBtn {
+    position: relative;
+    left: 50px;
+    top: 50px;
+}
+
+#backBtn, #undoBtn {
+    color: rgb(143, 124, 252); 
+    background-color: transparent;
+    border: none;
+    border-radius: 2px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#saveBtn {
+    background-color: rgb(143, 124, 252); 
+    color: white;
+    border: none;
+    border-radius: 2px;
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+    left: 160px;
+    top: 50px;
+}
+
+#confirmationModal {
+    display: none; 
+    background-color: rgba(0, 0, 0, 0.8); 
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; 
+}
