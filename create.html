@@ -15,16 +15,19 @@
 
         <nav class="navbar">
             <ul class="nav-links">
-                <li><a href="home.html" id="homeBtn"><i class="fas fa-home"></i>Home</a></li>
-                <li><a href="create.html">Create Habit</a></li>
-                <li><a href="#" id="helpBtn"><i class="fas fa-question-circle"></i>Help</a></li>
+                <li><a href="home.html" id="homeBtn"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="create.html" id="createHabitBtn"><i class="fas fa-pencil"></i>Create Habit</a></li>
+                <li><a href="#" id="streakCalculatorBtn"><i class="fas fa-fire"></i>Streak Calculator</button></li>
+                <li><a href="#" id="reminderBtn"><i class="fas fa-bell"></i>Notification</a></li>
+                <li><a href="#" id="helpBtn"><i class="fas fa-question-circle"></i> Help</a></li>
+                <li><a href="#" id="logoutButton"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
             </ul>
         </nav>
 
         <div class="create-habit-container">
             <form id="createHabitForm">
                 <label for="habitName">Habit Name:</label>
-                <input type="text" placeholder="Enter Habit Name" name="habitName" required>
+                <input type="text" id="habitName" placeholder="Enter Habit Name" name="habitName" required>
 
                 <label for="habitFrequency">Frequency:</label>
                 <select id="habitFrequency" name="habitFrequency">
@@ -39,8 +42,8 @@
                 <label for="habitDescription">Description:</label>
                 <textarea id="habitDescription" name="habitDescription" rows="4" placeholder="Describe your habit..."></textarea>
 
-                <button class="button" type="back" id="backBtn">Back</button>
-                <button class="button" type="undo" id="undoBtn">Undo</button>
+                <button class="button" type="submit" id="backBtn">Back</button>
+                <button class="button" type="submit" id="undoBtn">Undo</button>
                 <button class="button" type="submit" id="saveBtn">Save</button>
             </form>
 
