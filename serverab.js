@@ -11,15 +11,31 @@ function fetchHabits() {
                 habitItem.classList.add("habit-item");
 
                 const habitName = document.createElement("span");
-                habitName.textContent = habit.name;
+                habitName.textContent = habit.name; 
 
+                // Create the 'Complete' button and attach event listener
                 const completeButton = document.createElement("button");
                 completeButton.textContent = "Complete";
                 completeButton.addEventListener("click", () => {
-                    const note = prompt("Add a note about your completion (optional):");
-                    logHabitCompletion(habit.id, true, note); 
-                })
-
+                    const note = prompt("Add a note about your completion (optional):") || "";
+                    
+                    // Make HTTP request to Microservice A to log the habit completion
+                    fetch('http://localhost:2500/api/log', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ habitId: habit.id, completed: true, note: note })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log("Habit completion logged:", data);
+                    })
+                    .catch(error => {
+                        console.error("Error logging habit completion:", error);
+                    });
+                });
+                
                 const editButton = document.createElement("button");
                 editButton.textContent = "Edit";
                 editButton.addEventListener("click", () => editHabit(habit.id));
@@ -72,26 +88,3 @@ function deleteHabit(habitId) {
 
 // Load habits on page load
 fetchHabits();
-
-// Function to log habit completion (Microservice A)
-function logHabitCompletion(habitId, completed) {
-    const loggedAt = new Date().toISOString();
-
-    fetch('http://localhost:2500/api/log', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ habitId, note, loggedAt, completed })
-    })
-    .then(response => response.json())
-    .then(log => {
-        console.log('Logged habit completion:', log);
-    })
-    .catch(error => {
-        console.error("Error logging habit:", error);
-    });
-}
-
-
-
