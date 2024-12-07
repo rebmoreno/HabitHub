@@ -138,7 +138,4 @@ document.addEventListener("DOMContentLoaded", () => {
         habits.push(habit);
         localStorage.setItem("habits", JSON.stringify(habits));
     }
- });
-
-
-         
+});
