@@ -45,6 +45,7 @@ h1, h2 {
     border-radius: 2px;
     margin: 16px;
     font-size: 14px;
+    border:none;
 }
 
 .button:hover {
@@ -148,6 +149,21 @@ input:focus + .tooltip {
     text-align: start;
 }
 
+
+.habit-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.habit-name {
+    flex-grow: 1; 
+    font-size: 16px;
+}
+
 .plusBtn {
     border-radius: 50px;
     border: 1px solid black;
@@ -218,6 +234,113 @@ input:focus + .tooltip {
     cursor: pointer;
 }
 
+.modal1 {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black with opacity */
+    padding-top: 60px;
+}
+
+.modal-content1 {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    }
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+#reminderForm {
+    display: none; 
+    color: black;
+    padding: 16px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+#overlay {
+    display: none; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 999; 
+}
+
+#reminderForm input {
+    width: calc(90% - 20px); 
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+#reminderForm button {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #7b00ff;
+    color: #fff; 
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#reminderForm button:hover {
+    background-color: #4800b3; 
+}
+
+
 #helpPopup {
     display: none; 
     background-color: rgba(0, 0, 0, 0.8); 
@@ -261,6 +384,69 @@ input:focus + .tooltip {
 }
 
 .modal {
+    display: none;
+}
+
+#streak-calculator {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+    z-index: 1000;
+}
+
+#streak-calculator h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#streak-calculator input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#streak-calculator button {
+    background-color: #6d27b7;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#streak-calculator button:hover {
+    background-color: #432188;
+}
+
+#streak-result {
+    margin-top: 20px;
+}
+
+#streak-result h3 {
+    color: #555;
+    margin-bottom: 5px;
+}
+
+#streak-result .highlight {
+    color: #5728a7;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.hidden {
     display: none;
 }
 
