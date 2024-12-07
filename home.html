@@ -6,7 +6,11 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="style.css">
-        <script src="main.js"></script>
+        <script src="main.js" defer></script>
+        
+        <script src="serverab.js"></script>
+        <script src="serverc.js"></script>
+        <script src="serverd.js"></script>
     </head>
     <body>
 
@@ -15,8 +19,12 @@
         <nav class="navbar">
             <ul class="nav-links">
                 <li><a href="home.html" id="homeBtn"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="create.html" id="createHabitBtn">Create Habit</a></li>
+                <li><a href="create.html" id="createHabitBtn"><i class="fas fa-pencil"></i>Create Habit</a></li>
+                <li><a href="#" id="streakCalculatorBtn"><i class="fas fa-fire"></i>Streak Calculator</button></li>
+                <li><a href="#" id="reminderBtn"><i class="fas fa-bell"></i>Notification</a></li>
                 <li><a href="#" id="helpBtn"><i class="fas fa-question-circle"></i> Help</a></li>
+                <li><a href="#" id="logoutButton"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+
             </ul>
         </nav>
 
@@ -29,10 +37,22 @@
                 <p>To come back to the home page select the home button at the top-left.</p>
             </div>
 
+            <button class="button" id="randomQuote">Get Random Quote</button>
+            <button class="button" id="fitnessQuote">Get Fitness Quote</button>
+            <p id="quote"></p>
+
             <div class="habit-list">
                 <h2>Current Habits</h2>
                 <ul id="habitsList">
+                    <li class="habit-item">
+                        <span class="habit-name">${habit.name}</span>
                     
+                        <div class="button-container">
+                            <button class="log-completed-btn" data-element-id="${habit.id}">Log Habit</button>
+                            <button class="edit-btn" data-habit-id="${habit.id}">Edit</button>
+                            <button class="delete-btn" data-habit-id="${habit.id}">Delete</button>
+                        </div>
+                    </li>
                 </ul>
             </div>
 
@@ -61,6 +81,27 @@
                     <button class="button" id="closeBtn">Close</button>
                 </div>
             </div>
+
+            <div id="overlay">
+            <form id="reminderForm">
+                <input type="text" id="habitName" placeholder="Habit Name"/>
+                <input type="datetime-local" id="reminderTime"/>
+                <button type="submit">Set Reminder</button>
+            </form>
+            </div>
+        
+            <section id="streak-calculator"  class="hidden">
+                <h2>Habit Streak Tracker</h2>
+                <p>Enter the dates you completed the habit (comma-separated):</p>
+                <input type="text" id="datesInput" placeholder="e.g., 2024-12-01, 2024-12-02, 2024-12-04">
+                <button id="calculateStreak">Calculate Streak</button>
+                <div class="streak-result">
+                    <h3>Longest Streak:</h3>
+                    <p id="streakResult" class="highlight">-</p>
+                </div>
+            </section>
+            
+        
         </div>
     </body>
 </html>
